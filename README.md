@@ -29,3 +29,5 @@ node -v
 ```
 3. Install nodeJS and NPM
 4. Check version 
+
+I created bash script and ansible version. 
