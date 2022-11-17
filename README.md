@@ -38,7 +38,7 @@ nvm --version
 node --version
 ```
 I created bash script and ansible version. 
-``
+```
 node_automation_script.sh 
 ```
 for ansible playbook, I wrote ansible playbook.
