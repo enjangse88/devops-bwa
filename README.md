@@ -25,7 +25,7 @@ curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o inst
 2.Reload bash profile
 ```
 source ~/.bash_profile
-node -v
+nvm --version
 ```
 3. Install nodeJS and NPM
 4. Check version 
