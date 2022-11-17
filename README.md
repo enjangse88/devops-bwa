@@ -28,6 +28,20 @@ source ~/.bash_profile
 nvm --version
 ```
 3. Install nodeJS and NPM
+```
+nvm install --lts  // install LTS version 
+nvm install ${node-version} // install spesific version
+```
 4. Check version 
-
+```
+nvm --version
+node --version
+```
 I created bash script and ansible version. 
+``
+node_automation_script.sh 
+```
+for ansible playbook, I wrote ansible playbook.
+```
+node_install.yaml
+```
