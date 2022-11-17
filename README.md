@@ -2,7 +2,7 @@
 
 ###This repo contains exercises on various technical topics from BWA DevOps Course. 
  
-## Prepare instance AWS EC2 instance 
+### Prepare instance AWS EC2 instance 
 
 ```
 aws ec2 run-instances \
