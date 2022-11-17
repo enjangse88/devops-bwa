@@ -15,3 +15,17 @@ aws ec2 run-instances \
     --block-device-mappings "[{\"DeviceName\":\"/dev/sdf\",\"Ebs\":{\"VolumeSize\":30,\"DeleteOnTermination\":false}}]" \
     --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=bwa-server}]' 'ResourceType=volume,Tags=[{Key=Name,Value=bwa-server-disk}]'
   ```
+
+### Prepare NodeJS, NPM, PM2
+
+1. Install NVM 
+```
+curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh | bash
+```
+2.Reload bash profile
+```
+source ~/.bash_profile
+node -v
+```
+3. Install nodeJS and NPM
+4. Check version 
