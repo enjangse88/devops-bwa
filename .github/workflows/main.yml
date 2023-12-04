@@ -10,20 +10,20 @@ jobs:
   build:
     runs_on: ubuntu-latest
 
-  strategy:
-    matrix:
-      node-version: [12.x, 14.x]
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
   
-  steps:
-    - uses: actions/checkout@v2
-    - name: buid nodeJS ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-      run: |
-        npm ci
-        npm run build --if-present
-        npm test
+    steps:
+      - uses: actions/checkout@v2
+      - name: buid nodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+        run: |
+          npm ci
+          npm run build --if-present
+          npm test
   
   deploy:
     needs: [build]
