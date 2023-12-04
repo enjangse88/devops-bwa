@@ -1,0 +1,45 @@
+name: Calculate BWA CI/CD
+
+on:
+  push: 
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs_on: ubuntu-latest
+
+  strategy:
+    matrix:
+      node-version: [12.x, 14.x]
+  
+  steps:
+    - uses: actions/checkout@v2
+    - name: buid nodeJS ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      
+    - run: |
+      npm ci
+      npm run build --if-present
+      npm test
+  
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: deploy to server
+      uses: appleboy/ssh-action@master
+      with:
+        host: 
+        username:
+        password:
+        port:
+        script: |
+          cd ~/apps/calculate-bwa
+          git pull origin master
+          ~/.nvm/versions/node/v12.19.0/bin/npm install
+          ~/.nvm/versions/node/v12.19.0/bin/pm2 restart all
